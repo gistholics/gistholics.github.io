@@ -1,18 +1,18 @@
 # main links
 main:
-  - title: "Home"
+  - title: "홈"
     url: /
-  - title: "Mentorship"
+  - title: "멘토"
     url: /mentorship/
-  - title: "Members"
+  - title: "구성원"
     url: /members/
-  - title: "Events"
+  - title: "활동"
     url: /events/
-  - title: "Recruiting"
+  - title: "모집"
     url: /recruiting/
   # - title: "Donate"
   #   url: /donate/
-  - title: "Rules"
+  - title: "회칙"
     url: /rules/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
