@@ -1,10 +1,9 @@
 ---
 layout: single
-mentorship_profile: true
 ---
 
 {% for mentorship in site.data.mentorship %}
-{% assign home = '/members/' | append: mentorship.name | absolute_url %}
+{% assign home = '/mentorship/' | append: mentorship.name | absolute_url %}
 <div class="profile">
 
   <table cellspacing="0" cellpadding="0" style="border: none;">
