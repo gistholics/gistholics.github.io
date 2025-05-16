@@ -1,4 +1,37 @@
 ---
 layout: single
-author_profile: true
+mentorship_profile: true
 ---
+
+{% for mentorship in site.data.mentorship %}
+{% assign home = '/members/' | append: mentorship.name | absolute_url %}
+<div class="profile">
+
+  <table cellspacing="0" cellpadding="0" style="border: none;">
+    <tr>
+      <td width="120" valign="top" style="padding-right: 15px;">
+        <a href="{{ home }}">
+        <img src="{{ mentorship.avatar | relative_url | default: '/assets/images/avatar.png' }}" width="100" height="100" alt="{{ mentorship.name }}" style="display:block;">
+        </a>
+      </td>
+      <td valign="top">
+        <a href="{{ home }}">
+        <p><strong style="font-size: 16px;">{{ mentorship.name }}</strong></p>
+        </a>
+        <p><strong>멘토링 분야:</strong> {{ mentorship.field }}</p>
+        <p><strong>학번:</strong> {{ mentorship.year | truncate: 4, "" | append: "****" }}</p>
+        <p><strong>소개:</strong></p>
+        <ul>
+          {% assign bio = mentorship.bio | split: '/' %}
+          {% for line in bio %}
+            <li>{{ line | strip }}</li>
+          {% endfor %}
+        </ul>
+        <!-- <p><strong>자기소개:</strong></p> {{ mentorship.description | markdownify }} -->
+
+      </td>
+    </tr>
+  </table>
+
+</div>
+{% endfor %}
