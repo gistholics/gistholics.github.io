@@ -11,7 +11,7 @@ layout: single
     <tr>
       <td width="240" valign="top" style="padding-right: 15px;">
         <a href="{{ home }}">
-        <img src="{{ mentorship.avatar | relative_url | default: '/assets/images/avatar.png' }}" width="200" height="200" alt="{{ mentorship.name }}" style="display:block;">
+        <img src="{{ mentorship.avatar | default: 'avatar.png' | prepend: '/assets/images/' }}" width="200" height="200" alt="{{ mentorship.name }}" style="display:block;">
         </a>
         
         <ul>

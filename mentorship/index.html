@@ -10,7 +10,7 @@ layout: single
     <tr>
       <td width="120" valign="top" style="padding-right: 15px;">
         <a href="{{ home }}">
-        <img src="{{ mentorship.avatar | relative_url | default: '/assets/images/avatar.png' }}" width="100" height="100" alt="{{ mentorship.name }}" style="display:block;">
+        <img src="{{ mentorship.avatar | default: 'avatar.png' | prepend: '/assets/images/' }}" width="100" height="100" alt="{{ mentorship.name }}" style="display:block;">
         </a>
       </td>
       <td valign="top">
