@@ -3,7 +3,7 @@ layout: single
 ---
 {% assign name = page.name | split: "." | first %}
 {% assign mentorship = site.data.mentorship | where: "name", name | first %}
-{% assign home = '/members/' | append: mentorship.name | absolute_url %}
+{% assign home = '/mentorship/' | append: mentorship.name | absolute_url %}
 
 <div class="profile">
 
