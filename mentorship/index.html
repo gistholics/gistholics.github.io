@@ -8,17 +8,16 @@ layout: single
 {% if mentorship.avatar %}
   {% assign img_path = mentorship.avatar | prepend: '/assets/images/mentor/' %}
 {% endif %}
+<a href="{{ home }}" style="color: inherit; text-decoration: none;">
 <div class="profile">
   <table cellspacing="0" cellpadding="0" style="border: none;">
     <tr>
       <td width="120" valign="top" style="padding-right: 15px;">
-        <a href="{{ home }}">
-          <img src="{{ img_path }}" width="100" height="100" alt="{{ mentorship.name }}" style="display:block;">
-        </a>
+        <img src="{{ img_path }}" style="width: 100px;" alt="{{ mentorship.name }}" style="display:block;">
       </td>
       <td valign="top">
         <a href="{{ home }}">
-        <p><strong style="font-size: 16px;">{{ mentorship.name }}</strong></p>
+          <p><strong style="font-size: 16px;">{{ mentorship.name }}</strong></p>
         </a>
         <p><strong>멘토링 분야:</strong> {{ mentorship.field }}</p>
         <p><strong>학번:</strong> {{ mentorship.year | truncate: 4, "" | append: "****" }}</p>
@@ -30,10 +29,9 @@ layout: single
           {% endfor %}
         </ul>
         <!-- <p><strong>자기소개:</strong></p> {{ mentorship.description | markdownify }} -->
-
       </td>
     </tr>
   </table>
-
 </div>
+</a>
 {% endfor %}
