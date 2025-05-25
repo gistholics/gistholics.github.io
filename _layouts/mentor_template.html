@@ -4,6 +4,10 @@ layout: single
 {% assign name = page.name | split: "." | first %}
 {% assign mentorship = site.data.mentorship | where: "name", name | first %}
 {% assign home = '/mentorship/' | append: mentorship.name | absolute_url %}
+{% assign img_path = "/assets/images/avatar.png" %}
+{% if mentorship.avatar %}
+  {% assign img_path = mentorship.avatar | prepend: '/assets/images/mentor/' %}
+{% endif %}
 
 <div class="profile">
 
@@ -11,7 +15,7 @@ layout: single
     <tr>
       <td width="240" valign="top" style="padding-right: 15px;">
         <a href="{{ home }}">
-        <img src="{{ mentorship.avatar | default: 'avatar.png' | prepend: '/assets/images/' }}" width="200" height="200" alt="{{ mentorship.name }}" style="display:block;">
+          <img src="{{ img_path }}" width="200" height="200" alt="{{ mentorship.name }}" style="display:block;">
         </a>
         
         <ul>
