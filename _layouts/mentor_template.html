@@ -4,7 +4,6 @@ layout: single
 {% assign name = page.name | split: "." | first %}
 {% assign mentorship = site.data.mentorship | where: "name", name | first %}
 {% assign home = '/mentorship/' | append: mentorship.name | absolute_url %}
-{% assign link = "https://forms.gle/pka9ig7m43kUpdaEA" %}
 {% assign img_path = "/assets/images/avatar.png" %}
 {% if mentorship.avatar %}
   {% assign img_path = mentorship.avatar | prepend: '/assets/images/mentor/' %}
@@ -38,7 +37,9 @@ layout: single
                 {{ mentorship.email }}
                 </li>
             {% endif %}
-            <button onclick="location.href='{{ link }}'">button</button>
+            {% if site.data.value.mentor_application_link %}
+              <button onclick="location.href='{{ site.data.value.mentor_application_link }}'">신청하기</button>
+            {% endif %}
         </ul>
       </td>
       <td valign="top">
