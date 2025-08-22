@@ -2,11 +2,11 @@
 layout: single
 ---
 {% assign name = page.name | split: "." | first %}
-{% assign mentorship = site.data.mentorship | where: "name", name | first %}
-{% assign home = '/mentorship/' | append: mentorship.name | absolute_url %}
+{% assign mentor = site.data.mentor | where: "name", name | first %}
+{% assign home = '/mentor/' | append: mentor.name | absolute_url %}
 {% assign img_path = "/assets/images/avatar.png" %}
-{% if mentorship.avatar %}
-  {% assign img_path = mentorship.avatar | prepend: '/assets/images/mentor/' %}
+{% if mentor.avatar %}
+  {% assign img_path = mentor.avatar | prepend: '/assets/images/mentor/' %}
 {% endif %}
 
 <div class="profile">
@@ -15,26 +15,26 @@ layout: single
     <tr>
       <td width="240" valign="top" style="padding-right: 15px;">
         <a href="{{ home }}">
-          <img src="{{ img_path }}" width="200" height="200" alt="{{ mentorship.name }}" style="display:block;">
+          <img src="{{ img_path }}" width="200" height="200" alt="{{ mentor.name }}" style="display:block;">
         </a>
         
         <ul>
-            {% if mentorship.phone %}
+            {% if mentor.phone %}
                 <li>
-                <a href="tel:{{ mentorship.phone }}" rel="me" class="u-email">
-                    <meta itemprop="phone" content="{{ mentorship.phone }}" />
+                <a href="tel:{{ mentor.phone }}" rel="me" class="u-email">
+                    <meta itemprop="phone" content="{{ mentor.phone }}" />
                     <i class="fas fa-fw fa-phone-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].phone_label | default: "Phone" }}</span>
                 </a><br>
-                {{ mentorship.phone }}
+                {{ mentor.phone }}
                 </li>
             {% endif %}
-            {% if mentorship.email %}
+            {% if mentor.email %}
                 <li>
-                <a href="mailto:{{ mentorship.email }}" rel="me" class="u-email">
-                    <meta itemprop="email" content="{{ mentorship.email }}" />
+                <a href="mailto:{{ mentor.email }}" rel="me" class="u-email">
+                    <meta itemprop="email" content="{{ mentor.email }}" />
                     <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
                 </a><br>
-                {{ mentorship.email }}
+                {{ mentor.email }}
                 </li>
             {% endif %}
             {% if site.data.value.mentor_application_link %}
@@ -44,18 +44,18 @@ layout: single
       </td>
       <td valign="top">
         <a href="{{ home }}">
-        <p><strong style="font-size: 16px;">{{ mentorship.name }}</strong></p>
+        <p><strong style="font-size: 16px;">{{ mentor.name }}</strong></p>
         </a>
-        <p><strong>멘토링 분야:</strong> {{ mentorship.field }}</p>
-        <p><strong>학번:</strong> {{ mentorship.year | truncate: 4, "" | append: "****" }}</p>
+        <p><strong>멘토링 분야:</strong> {{ mentor.field }}</p>
+        <p><strong>학번:</strong> {{ mentor.year | truncate: 4, "" | append: "****" }}</p>
         <p><strong>소개:</strong></p>
         <ul>
-          {% assign bio = mentorship.bio | split: '/' %}
+          {% assign bio = mentor.bio | split: '/' %}
           {% for line in bio %}
             <li>{{ line | strip }}</li>
           {% endfor %}
         </ul>
-        <p><strong>자기소개:</strong></p> {{ mentorship.description | markdownify }}
+        <p><strong>자기소개:</strong></p> {{ mentor.description | markdownify }}
 
       </td>
     </tr>
