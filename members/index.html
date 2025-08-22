@@ -1,3 +1,29 @@
 ---
 layout: single
 ---
+
+<div class="page-header">
+  <h1>- 구성원 소개 -</h1>
+</div>
+
+
+{% for member in site.data.member %}
+{% assign img_path = "/assets/images/avatar.png" %}
+{% if member.avatar %}
+  {% assign img_path = member.avatar | prepend: '/assets/images/mentor/' %}
+{% endif %}
+<div class="profile">
+  <table cellspacing="0" cellpadding="0" style="border: none;">
+    <tr>
+      <td width="120" valign="top" style="padding-right: 15px;">
+        <img src="{{ img_path }}" style="width: 100px;" alt="{{ member.name }}" style="display:block;">
+      </td>
+      <td valign="top">
+        <p><strong style="font-size: 16px;">{{ member.name }}</strong></p>
+        <p><strong>전공:</strong> {{ member.major }}</p>
+        <p><strong>학번:</strong> {{ member.year | truncate: 4, "" | append: "****" }}</p>
+      </td>
+    </tr>
+  </table>
+</div>
+{% endfor %}
