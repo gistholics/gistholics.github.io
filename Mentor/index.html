@@ -3,7 +3,7 @@ layout: single
 ---
 
 {% for mentor in site.data.mentor %}
-{% assign home = '/mentor/' | append: mentor.name | absolute_url %}
+{% assign home = '/Mentor/' | append: mentor.name | absolute_url %}
 {% assign img_path = "/assets/images/avatar.png" %}
 {% if mentor.avatar %}
   {% assign img_path = mentor.avatar | prepend: '/assets/images/mentor/' %}
