@@ -33,6 +33,4 @@ HOLICS는 2010년 GIST 학부 출범과 함께 창립된, 전통 깊은 자연�
   <h1>- 조직도 -</h1>
 </div>
 
-<div class="mermaid"> 
-  graph TD; A-->B; A-->C; 
-</div>
+![조직도]({{"/assets/images/조직도.jpg" | relative_url }})
