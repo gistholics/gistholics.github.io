@@ -8,6 +8,8 @@ header:
     actions:
         - label: "Join us"
           url: "https://docs.google.com/forms/d/e/1FAIpQLSfxmWsAOlVHzY6USoTOdFMo8dHUdxJrjqduvNUdyrQGq__yXQ/viewform"
+        - label: "Mentor"
+          url: "https://forms.gle/mZ5L2wPrD3oCqbXe6"
 ---
 
 안녕하십니까.
