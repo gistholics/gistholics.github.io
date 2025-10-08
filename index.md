@@ -12,6 +12,10 @@ header:
           url: "https://forms.gle/mZ5L2wPrD3oCqbXe6"
 ---
 
+<script language="javascript">
+window.open("popup.html", "a", "width=400, height=300, left=100, top=50");
+</script>
+
 안녕하십니까.
 
 2025년 을사년, 16대 HOLICS 대표를 맡은 **GIST 물리광과학과 조문경**입니다.
